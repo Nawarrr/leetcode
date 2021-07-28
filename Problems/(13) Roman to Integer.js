@@ -26,26 +26,26 @@ Given a roman numeral, convert it to an integer.
  * @return {number}
  */
 
- 
- var romanToInt = function(s) {
-    const romanMap = {
-    'I': 1,
-    'V': 5,
-    'X': 10,
-    'L': 50,
-    'C': 100,
-    'D': 500,
-    'M': 1000
-}
-    const lastLetter = s[(s.length) - 1 ] ;
-    let count  = romanMap[lastLetter] ;
-    for (let i = (s.length )-1 ; i != 0 ; i-- ) {
-        if (romanMap[s[i]] > romanMap[s[i -1]]) {
-            count -= romanMap[s[i -1]]
 
-            
-        }else {
-            count += romanMap[s[i -1]]
+var romanToInt = function (s) {
+    const romanMap = {
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000
+    }
+    const lastLetter = s[(s.length) - 1];
+    let count = romanMap[lastLetter];
+    for (let i = (s.length) - 1; i != 0; i--) {
+        if (romanMap[s[i]] > romanMap[s[i - 1]]) {
+            count -= romanMap[s[i - 1]]
+
+
+        } else {
+            count += romanMap[s[i - 1]]
 
         }
     } return count
