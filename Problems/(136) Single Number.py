@@ -18,3 +18,13 @@ class Solution(object):
             
         return result
         
+
+
+# BITWISE MANIPULATION 
+# Example
+# [1 , 2 , 4 , 2 , 4]
+# 0 ^ 1 = 1
+# 01 ^ 10 = 11
+# 011 ^ 110 = 101
+# 101 ^ 010 = 111
+# 111 ^ 110 = 001 = 1 
