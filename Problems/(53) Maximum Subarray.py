@@ -44,4 +44,14 @@ class Solution:
         return self.evaluateSumRL(nums , 0 , len(nums)-1)
     
     
-# ---------------- There is a better O(n) option --------- CHECK Kadane's algo on YT -------------#
+# ---------------- O(n) Kadane's Algorithm -------------#
+    def maxSubArray(self, nums: List[int]):
+        maxSoFar = -1000000000000
+        maxHere = 0
+        for i in nums:
+            maxHere += i
+            maxSoFar = max(maxHere,maxSoFar)
+            if maxHere < 0 :
+                maxHere = 0
+
+        return maxSoFar
