@@ -16,6 +16,7 @@ Given the root of a binary tree, return the inorder traversal of its nodes' valu
 #         self.val = val
 #         self.left = left
 #         self.right = right
+# ---------------------------------- Recursive Soultion -------------------------------- #
 class Solution:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         def inorder(node , list):
@@ -27,3 +28,24 @@ class Solution:
             return inorder(node.right , list)
         ans = []
         return inorder(root , [])
+
+
+
+# ---------------------------------- Iterative Soultion -------------------------------- #
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        stack = []
+        output = []
+        current = root
+        while True:
+            if current != None:
+                stack.append(current)
+                current = current.left
+            
+            elif stack:
+                current = stack.pop()
+                output.append(current.val)
+                
+                current = current.right
+            
+            else:
+                return output

@@ -30,5 +30,24 @@ class Solution:
         
         
         return pre(root, [])
+
+    
+
+
+    #-------------------------- iterative Approach --------------------------------------#
+    def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        stack = []
+        output = []
+        current = root
+        while True:
+            if current != None:
+                output.append(current.val)
+                stack.append(current)
+                current = current.left
+            elif stack :
+                current = stack.pop()
+                current = current.right
+            else:
+                return output
             
         

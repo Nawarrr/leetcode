@@ -14,6 +14,7 @@ Given the root of a binary tree, return the postorder traversal of its nodes' va
 #         self.left = left
 #         self.right = right
 class Solution:
+    # ----------------------------- Recursive -------------------------------------------#
     def postorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         def postorder(node , list):
             if node == None:
@@ -24,3 +25,27 @@ class Solution:
             return list
         ans = []
         return postorder(root, ans)
+
+
+    # --------------------------------- Iterative -----------------------------------------#
+    def postorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        s1 = []
+        s2 = []
+        output = []
+        current = root
+        s1.append(current)
+        if current == None:
+            return output
+        while s1:
+            current = s1.pop()
+            s2.append(current)
+            if current.left :
+                s1.append(current.left)
+            if current.right:
+                s1.append(current.right)
+
+            
+        
+        while s2:
+            output.append(s2.pop().val)
+        return output
