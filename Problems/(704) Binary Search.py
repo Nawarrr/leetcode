@@ -25,7 +25,6 @@ class Solution:
                 high = mid -1
         return -1
     #------------- Recursive Approach -------------------#
-class Solution:
     def search(self, nums: List[int], target: int) -> int:
         def BinarySearch(arr , low , high , target):
             if low > high :
