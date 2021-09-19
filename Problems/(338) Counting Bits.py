@@ -1,6 +1,6 @@
 class Solution:
     #---------------------------------------- O(n Log n) ----------------------------------------# 
-    def countBits(self, n: int) -> List[int]:
+    def count(self, n: int) -> List[int]:
         nums = []
         for i in range(n+1):
             counter = 0
@@ -11,7 +11,7 @@ class Solution:
             nums.append(counter)
         return nums
     #----------------------------------------     O(n)     ----------------------------------------# Using  DP 
-    def countBits(self, n: int) -> List[int]:
+    def count(self, n: int) -> List[int]:
         import math
         dp = [0]
         power = 0
