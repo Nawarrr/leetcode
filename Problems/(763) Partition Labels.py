@@ -11,7 +11,7 @@ Return a list of integers representing the size of these parts.
 class Solution:
     def partitionLabels(self, s: str) -> List[int]:
         lastApperance = {c:i for i, c in enumerate(s)}
-        lastIndex = 0.
+        lastIndex = 0
         count = 0
         output = []
         for j in range(len(s)):
