@@ -29,4 +29,15 @@ class Solution:
 
         return prev
                 
+    #--------------------------------- Recursive Approach ------------------------#
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+
+        def reverse(prev, head):
+            if head == None:
+                return prev
+            next = head.next
+            head.next = prev
+            prev = head
+            return reverse(head , next)
         
+        return reverse(None , head)
