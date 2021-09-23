@@ -15,49 +15,48 @@ class ListNode:
          self.val = val
         self.next = next
 class Solution:
-    def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
-        """
-        :type l1: ListNode
-        :type l2: ListNode
-        :rtype: ListNode
-        """
-        l3 = ListNode()
-        curr = l3
+     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+        dummy = output = ListNode()
         carry = 0
-        while l2 != None or l1 != None :
-            if l1 == None:
-                curr.next = ListNode( (l2.val + carry) % 10 )
-                curr = curr.next
-                if l2.val + carry == 10:
-                    carry = 1
-                else:
-
-                    carry = 0
-                l2 = l2.next
-            elif l2 == None:
-                curr.next = ListNode( (l1.val+ carry) %10)
-                curr = curr.next
-                if l1.val + carry == 10:
-                    carry = 1
-                else:
-                    carry = 0
-
-                l1 = l1.next
+        while l1 and l2 :
+            output.next = ListNode()
+            output = output.next
+            n1 = l1.val
+            n2 = l2.val
+            if (n1 +n2 + carry) >9:
+                
+                output.val = (n1 +n2 + carry) % 10
+                carry = 1
             else:
-                if l2.val + l1.val + carry > 9:
-                    curr.next = ListNode((l2.val + l1.val + carry) % 10  )
-                    carry = 0
-                    curr = curr.next
-                    carry += 1
-                    l1 = l1.next
-                    l2 = l2.next
-                else:
-                    curr.next = ListNode(l2.val + l1.val + carry)
-                    carry = 0
-                    curr = curr.next
-                    l1 = l1.next
-                    l2 = l2.next
-
-            if carry != 0 :
-                curr.next = ListNode(carry)
-        return l3.next
+                output.val = (n1 +n2 + carry)
+                carry = 0
+            l1 = l1.next
+            l2 = l2.next
+    
+                
+                
+                
+        while l1 :
+            output.next = ListNode()
+            output = output.next
+            if l1.val + carry >9:
+                output.val = 0
+                carry = 1
+            else:
+                output.val = l1.val + carry
+                carry = 0
+            l1 = l1.next
+        while l2 :
+            output.next = ListNode()
+            output = output.next
+            if l2.val + carry >9:
+                output.val = 0
+                carry = 1
+            else:
+                output.val = l2.val + carry
+                carry = 0
+            l2 = l2.next
+        if carry:
+            output.next = ListNode(1)
+            
+        return dummy.next
