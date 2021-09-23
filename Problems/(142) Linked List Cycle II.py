@@ -45,3 +45,5 @@ class Solution:
                 return fast
             fast = fast.next
             slow = slow.next
+
+
