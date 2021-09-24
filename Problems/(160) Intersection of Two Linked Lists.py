@@ -52,5 +52,28 @@
                 currA = currA.next
                 currB = currB.next
             
-            #------------ There is a better soultion where you traverse with both of them and when they get to null you switch them to the other one,
-            #  so they both find out each other ----------
+
+
+            #--------------------------------------- O(N) time , O(1) space -----------------------------------# I'm in Fucking Love with this solution
+        def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
+            currA = headA
+            currB = headB
+
+            while currA or currB:
+                
+                if currA == None:
+                    currA = headB
+                    
+                if currB == None:
+                    currB = headA
+                    
+                if currA == currB :
+                    return currA
+
+                currA = currA.next
+                currB=currB.next
+                
+
+
+            
+            return None
