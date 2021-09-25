@@ -26,6 +26,7 @@ class Solution:
             else:
                 curr = curr.next
                 prev = prev.next
-        if curr.val == value:
+                
+        if curr.val == value: # I should remove this and compare to prev instead of next up there, But I really want to sleep
             prev.next = None
         return dummyNode.next
