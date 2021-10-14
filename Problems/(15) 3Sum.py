@@ -7,7 +7,7 @@ Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]]
 
 Notice that the solution set must not contain duplicate triplets.
 '''
-
+# Hash Map Soultion
 
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
@@ -35,3 +35,28 @@ class Solution:
             output.append(list(i))
                           
         return output
+
+# Two Pointer Soultion
+
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        nums.sort()
+        output = set()
+        for i in range(len(nums)):
+            target = nums[i]
+            j = i+1
+            k = len(nums)-1
+            while j < k:
+                if nums[j] + nums[k] == -target :
+                    triplet = (target , nums[j] , nums[k])
+                    output.add(triplet)
+                    j += 1
+                elif nums[j] + nums[k] > -target:
+                    k -=1
+                else:
+                    j += 1
+                
+        finalOutput = []
+        for i in output:
+            finalOutput.append(list(i))
+        return finalOutput
