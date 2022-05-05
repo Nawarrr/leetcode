@@ -2,6 +2,7 @@
 # https://leetcode.com/problems/max-number-of-k-sum-pairs/
 
 class Solution:
+    # O(n) Time , O(n) Space 
     def maxOperations(self, nums: List[int], k: int) -> int:
         counter = 0
         pairs_dict = dict()
