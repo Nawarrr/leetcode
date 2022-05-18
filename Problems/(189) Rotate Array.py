@@ -24,3 +24,19 @@ class Solution:
         rev(0 , x-1)
      
         rev(x , len(nums)-1)
+
+# Alternate Solution 
+class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        # O(1) Space Solution O(n) Soltion
+        x = len(nums) - k if k < len(nums) else len(nums) - (k % len(nums))
+        for i in range(x):
+            num = nums[0]
+            del nums[0]
+            nums.append(num)
+        return nums
+            
+            
