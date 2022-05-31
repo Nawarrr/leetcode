@@ -1,5 +1,5 @@
 # Question Link
-# https://leetcode.com/problems/check-if-a-string-contains-all-binary-codes-of-size-k/
+# https://leetcode.com/problems/check-if-a-string-contains-all-binary-codes-of-size-k/  
 class Solution:
     def hasAllCodes(self, s: str, k: int) -> bool:
         # O(n) Time O(2**K) Space
