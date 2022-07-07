@@ -3,7 +3,7 @@
 
 
 class Solution:
-    # O(max(n,m)) Time O(1) Space  
+    # O(max(n,m)) Time O(1) Space
     def relativeSortArray(self, arr1: List[int], arr2: List[int]) -> List[int]:
         hash_map = {}
         
